@@ -1,22 +1,24 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { fetchArticle } from "../modules/api";
+import Comments from "./Comments";
 
 export default function Article() {
     const { article_id } = useParams();
+    const articleId = Number(article_id);
     const [article, setArticle] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
-        if (article_id >= 0) {
+        if (articleId > 0) {
             setIsLoading(true);
-            fetchArticle(article_id).then((data) => {
+            fetchArticle(articleId).then((data) => {
                 const { article } = data;
                 setArticle(article);
                 setIsLoading(false);
             });
         }
-    }, [article_id]);
+    }, [articleId]);
 
     return (
         <article className="article">
@@ -38,6 +40,9 @@ export default function Article() {
                         </section>
                         <section>
                             <p className="article-body">{article.body}</p>
+                        </section>
+                        <section>
+                            <Comments articleId={articleId} />
                         </section>
                     </div>
                 </>
