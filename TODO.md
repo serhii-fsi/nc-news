@@ -22,7 +22,7 @@
 -   [x] Crate getRoute() util function.
 -   [x] Invoke and test fetchArticles() inside Articles.
 -   [x] Implement ArticleTile component and display articles.
--   [ ] Implement loader.
+-   [x] Implement loader.
 -   [ ] Implement error handling (later).
 -   [ ] Add better styles (later)
     -   [ ] What is an individual article card going to look like?

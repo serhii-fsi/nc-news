@@ -10,14 +10,12 @@ export default function Article() {
     const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
-        if (articleId > 0) {
-            setIsLoading(true);
-            fetchArticle(articleId).then((data) => {
-                const { article } = data;
-                setArticle(article);
-                setIsLoading(false);
-            });
-        }
+        setIsLoading(true);
+        fetchArticle(articleId).then((data) => {
+            const { article } = data;
+            setArticle(article);
+            setIsLoading(false);
+        });
     }, [articleId]);
 
     return (

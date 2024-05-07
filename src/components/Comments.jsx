@@ -7,14 +7,12 @@ export default function Comments({ articleId }) {
     const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
-        if (articleId > 0) {
-            setIsLoading(true);
-            fetchComments(articleId).then((data) => {
-                const { comments } = data;
-                setComments(comments);
-                setIsLoading(false);
-            });
-        }
+        setIsLoading(true);
+        fetchComments(articleId).then((data) => {
+            const { comments } = data;
+            setComments(comments);
+            setIsLoading(false);
+        });
     }, [articleId]);
 
     return (

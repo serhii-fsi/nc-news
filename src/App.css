@@ -2,13 +2,13 @@
 .home-page-main {
     display: flex;
     flex-direction: column;
-    border: solid 1px black;
+    /* border: solid 1px black; */
 }
 .home-page-sidebar {
-    border: solid 1px black;
+    /* border: solid 1px black; */
 }
 .home-page-content {
-    border: solid 1px black;
+    /* border: solid 1px black; */
 }
 
 /* Header */
@@ -65,10 +65,10 @@
 .article-page-main {
     display: flex;
     flex-direction: column;
-    border: solid 1px black;
+    /* border: solid 1px black; */
 }
 .article-page-content {
-    border: solid 1px black;
+    /* border: solid 1px black; */
 }
 
 /* Article */
