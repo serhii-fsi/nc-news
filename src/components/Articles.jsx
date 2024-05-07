@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { fetchArticles } from "../modules/api";
 import ArticleTile from "./ArticleTile";
 
-export default function ArticleDisplay() {
+export default function Articles() {
     const [articles, setArticles] = useState([]);
 
     useEffect(() => {
@@ -13,9 +13,9 @@ export default function ArticleDisplay() {
     }, []);
 
     return (
-        <ul className="article-display">
+        <ul className="articles">
             {articles.map((article) => (
-                <li className="article-display-li" key={article.article_id}>
+                <li className="articles-li" key={article.article_id}>
                     <ArticleTile article={article} />
                 </li>
             ))}

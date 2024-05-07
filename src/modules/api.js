@@ -26,3 +26,14 @@ export function fetchArticle(articleId) {
             return Promise.reject(error);
         });
 }
+
+export function fetchComments(articleId) {
+    return axios
+        .get(`${appUrl}/articles/${articleId}/comments`)
+        .then((response) => {
+            return response.data;
+        })
+        .catch((error) => {
+            return Promise.reject(error);
+        });
+}
