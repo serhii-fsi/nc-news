@@ -1,0 +1,12 @@
+{
+    "appUrl": {
+        "apiV1": "https://be-news-zvlb.onrender.com/api"
+    },
+    "router": {
+        "paths": {
+            "home": { "template": "/", "params": [] },
+            "signin": { "template": "/signin", "params": [] },
+            "article": { "template": "/articles/:article_id", "params": [":article_id"] }
+        }
+    }
+}
