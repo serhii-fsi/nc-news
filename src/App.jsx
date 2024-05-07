@@ -1,8 +1,9 @@
 import { useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import "./App.css";
-import Home from "./components/Home";
-import Signin from "./components/Signin";
+import HomePage from "./components/HomePage";
+import SigninPage from "./components/SigninPage";
+import ArticlePage from "./components/ArticlePage";
 
 import config from "../config.json";
 const {
@@ -15,8 +16,9 @@ function App() {
     return (
         <>
             <Routes>
-                <Route path={paths.home.template} element={<Home />} />
-                <Route path={paths.signin.template} element={<Signin />} />
+                <Route path={paths.home.template} element={<HomePage />} />
+                <Route path={paths.signin.template} element={<SigninPage />} />
+                <Route path={paths.article.template} element={<ArticlePage />} />
             </Routes>
         </>
     );
