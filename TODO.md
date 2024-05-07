@@ -9,7 +9,7 @@
 
 # Task 4 - CORE: View a list of all articles
 
--   [x] Implement Home component.
+-   [x] Implement HomePage component.
     -   [x] Implement sidebar and content sections.
 -   [x] Implement Header component.
 -   [x] Implement Nav component and add another menu item - Sign in,
@@ -22,10 +22,23 @@
 -   [x] Crate getRoute() util function.
 -   [x] Invoke and test fetchArticles() inside ArticleDisplay.
 -   [x] Implement ArticleTile component and display articles.
+-   [ ] Implement loader.
+-   [ ] Implement error handling.
 -   [ ] Add better styles (later)
     -   [ ] What is an individual article card going to look like?
     -   [ ] How can you display the information in an engaging and accessible way?
     -   [ ] How are you going to arrange the articles on the screen?
+    -   [ ] How will this view change with screens of different sizes?
+
+# Task 5 - CORE: View an individual article
+
+-   [x] Add ArticlePage component to the router.
+-   [x] Implement ArticlePage component.
+-   [x] Implement Article component and loader.
+-   [ ] Implement error handling.
+-   [ ] Add better styles (later)
+    -   [ ] How are you going to make use of the space to display the data?
+    -   [ ] How can you display the information in an engaging and accessible way?
     -   [ ] How will this view change with screens of different sizes?
 
 # Bugs

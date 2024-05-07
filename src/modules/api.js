@@ -15,3 +15,14 @@ export function fetchArticles() {
             return Promise.reject(error);
         });
 }
+
+export function fetchArticle(articleId) {
+    return axios
+        .get(`${appUrl}/articles/${articleId}`)
+        .then((response) => {
+            return response.data;
+        })
+        .catch((error) => {
+            return Promise.reject(error);
+        });
+}

@@ -1,6 +1,6 @@
 import Header from "./Header";
 
-export default function Signin() {
+export default function SigninPage() {
     return (
         <>
             <Header title="Sign in" />
