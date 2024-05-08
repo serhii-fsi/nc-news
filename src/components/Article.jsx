@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { fetchArticle } from "../modules/api";
 import Comments from "./Comments";
+import VoteArticle from "./VoteArticle";
 
 export default function Article() {
     const { article_id } = useParams();
@@ -33,11 +34,13 @@ export default function Article() {
                                 <li className="article-li">Created: {new Date(article.created_at).toDateString()}</li>
                                 <li className="article-li">Topic: {article.topic}</li>
                                 <li className="article-li">Comments: {article.comment_count ?? "undefined"}</li>
-                                <li className="article-li">Votes: {article.votes}</li>
                             </ul>
                         </section>
                         <section>
                             <p className="article-body">{article.body}</p>
+                        </section>
+                        <section>
+                            <VoteArticle articleId={articleId} votesNumber={article.votes} />
                         </section>
                         <section>
                             <Comments articleId={articleId} />

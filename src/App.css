@@ -127,3 +127,51 @@
 }
 .comment-body {
 }
+
+/* VoteArticle */
+.vote-article {
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+}
+.vote-article-li {
+    padding: 2px 10px 2px 10px;
+}
+.vote-article-button {
+    background-color: #fff;
+    border: 1px solid #d5d9d9;
+    border-radius: 8px;
+    box-shadow: rgba(213, 217, 217, 0.5) 0 2px 5px 0;
+    box-sizing: border-box;
+    color: #0f1111;
+    cursor: pointer;
+    display: inline-block;
+    font-family: "Amazon Ember", sans-serif;
+    font-size: 13px;
+    line-height: 29px;
+    padding: 0 10px 0 11px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: middle;
+    width: 100px;
+}
+.vote-article-button:hover {
+    background-color: #f7fafa;
+}
+.vote-article-button.highlight {
+    color: #fff;
+    background-color: #405cf5;
+}
+.vote-article-error {
+    border-radius: 8px;
+    color: #fff;
+    background-color: #a92f2f;
+    padding: 10px;
+    margin: 0px;
+    display: inline-block;
+}

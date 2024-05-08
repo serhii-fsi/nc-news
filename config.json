@@ -8,5 +8,8 @@
             "signin": { "template": "/signin", "params": [] },
             "article": { "template": "/articles/:article_id", "params": [":article_id"] }
         }
-    }
+    },
+    "unstableConnection": { "simulate": false, "chance": 0.4 },
+    "likeTimeout": 500,
+    "likeErrorTimeout": 5000
 }

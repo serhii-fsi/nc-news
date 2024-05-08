@@ -53,6 +53,21 @@
     -   [ ] How can you display the information in an engaging and accessible way?
     -   [ ] How will this view change with screens of different sizes?
 
+# Task 7 - CORE: Vote on an article
+
+-   [x] Implement VoteArticle component.
+    -   [x] Implement UserContext and set default user.
+    -   [x] Implement local storage.
+    -   [x] Implement sendArticleVote().
+    -   [x] Implement re-vote blocking until request finished and time delay.
+    -   [x] Implement simple error displaying.
+    -   [x] Guests cannot vote.
+    -   [x] Implement simulation of unstable connection.
+-   [ ] Implement global error store and displaying (later).
+-   [ ] Add better styles (later)
+    -   [ ] How can you display the information in an engaging and accessible way?
+    -   [ ] How will this view change with screens of different sizes?
+
 # Bugs
 
 # Improvements
