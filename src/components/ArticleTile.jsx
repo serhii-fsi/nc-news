@@ -21,7 +21,7 @@ export default function ArticleTile({ article }) {
                     <li className="article-tile-li">Created: {new Date(article.created_at).toDateString()}</li>
                     <li className="article-tile-li">Topic: {article.topic}</li>
                     <li className="article-tile-li">Comments: {article.comment_count}</li>
-                    <li className="article-tile-li">Votes: {article.votes}</li>
+                    <li className="article-tile-li">Rating: {article.votes}</li>
                 </ul>
             </div>
         </article>
