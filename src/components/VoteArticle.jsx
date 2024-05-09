@@ -4,7 +4,9 @@ import storage from "../modules/storage";
 import { UserContext } from "../providers/User";
 
 import config from "../../config.json";
-const { likeTimeout, likeErrorTimeout } = config;
+const {
+    VoteArticle: { likeBlockingTimeout, errorMsgTimeout },
+} = config;
 
 export default function VoteArticle({ articleId, votesNumber }) {
     const { user } = useContext(UserContext);
@@ -27,7 +29,7 @@ export default function VoteArticle({ articleId, votesNumber }) {
             .then(({ article }) => {
                 setTimeout(() => {
                     setIsLoading(false);
-                }, likeTimeout);
+                }, likeBlockingTimeout);
             })
             .catch((err) => {
                 setTimeout(() => {
@@ -35,10 +37,10 @@ export default function VoteArticle({ articleId, votesNumber }) {
                     setVotesNum(votesNum);
                     storage.setArticleVote(user, articleId, currVote);
                     setIsLoading(false);
-                }, likeTimeout);
+                }, likeBlockingTimeout);
 
                 setIsError(true);
-                setTimeout(() => setIsError(false), likeErrorTimeout);
+                setTimeout(() => setIsError(false), errorMsgTimeout);
             });
     };
 
@@ -46,9 +48,7 @@ export default function VoteArticle({ articleId, votesNumber }) {
         <>
             <ul className="vote-article">
                 <li className="vote-article-li">Rating: {votesNum}</li>
-                {!user ? (
-                    ""
-                ) : (
+                {user ? (
                     <>
                         <li className="vote-article-li">
                             <button
@@ -67,6 +67,8 @@ export default function VoteArticle({ articleId, votesNumber }) {
                             </button>
                         </li>
                     </>
+                ) : (
+                    ""
                 )}
             </ul>
             {isError ? <p className="vote-article-error">Operation failed</p> : ""}
