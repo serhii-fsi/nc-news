@@ -9,7 +9,19 @@
             "article": { "template": "/articles/:article_id", "params": [":article_id"] }
         }
     },
-    "unstableConnection": { "simulate": false, "chance": 0.4 },
-    "likeTimeout": 500,
-    "likeErrorTimeout": 5000
+    "unstableConnection": {
+        "simulate": false,
+        "successChance": 0.1,
+        "method": "post",
+        "path": "comment"
+    },
+    "VoteArticle": {
+        "likeBlockingTimeout": 500,
+        "errorMsgTimeout": 5000
+    },
+    "PostComment": {
+        "successMsgTimeout": 5000,
+        "errorMsgTimeout": 5000,
+        "commentHighlightTimeout": 8000
+    }
 }

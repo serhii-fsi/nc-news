@@ -108,6 +108,9 @@
 .comments-li {
     padding: 2px 10px 2px 10px;
 }
+.comments-li.highlighted {
+    outline: solid #405cf5;
+}
 
 /* Comment */
 .comment {
@@ -174,4 +177,23 @@
     padding: 10px;
     margin: 0px;
     display: inline-block;
+}
+
+/* PostComment */
+.post-comment {
+    display: flex;
+    flex-direction: column;
+}
+.post-comment-body {
+    max-width: 400px;
+}
+.post-comment-submit {
+    margin-top: 10px;
+    max-width: 150px;
+}
+.post-comment-posting {
+}
+.post-comment-success {
+}
+.post-comment-error {
 }

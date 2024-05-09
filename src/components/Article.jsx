@@ -33,7 +33,6 @@ export default function Article() {
                                 <li className="article-li">Author: {article.author}</li>
                                 <li className="article-li">Created: {new Date(article.created_at).toDateString()}</li>
                                 <li className="article-li">Topic: {article.topic}</li>
-                                <li className="article-li">Comments: {article.comment_count ?? "undefined"}</li>
                             </ul>
                         </section>
                         <section>

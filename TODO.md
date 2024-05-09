@@ -68,6 +68,25 @@
     -   [ ] How can you display the information in an engaging and accessible way?
     -   [ ] How will this view change with screens of different sizes?
 
+# Task 8 - CORE: Post a new comment to an existing article
+
+-   [x] Implement PostComment component.
+    -   [x] How can you ensure a user has filled out all the required information?
+    -   [x] Implement posting functionality.
+    -   [x] Guests cannot post.
+    -   [x] Implement loader and block multi posting.
+    -   [x] Refresh all the comments after post completion.
+    -   [x] Display feedback to the user to show them their post has
+            been successful.
+    -   [x] Clear the form field.
+    -   [x] Highlights the comment that has been added 
+            for X (from config) seconds. (later)
+    -   [x] Implement simple error displaying.
+-   [ ] Implement advanced error displaying. (later)
+-   [ ] Add better styles (later)
+    -   [ ] How can you display the information in an engaging and accessible way?
+    -   [ ] How will this view change with screens of different sizes?
+
 # Bugs
 
 # Improvements
