@@ -79,13 +79,30 @@
     -   [x] Display feedback to the user to show them their post has
             been successful.
     -   [x] Clear the form field.
-    -   [x] Highlights the comment that has been added 
+    -   [x] Highlights the comment that has been added
             for X (from config) seconds. (later)
     -   [x] Implement simple error displaying.
 -   [ ] Implement advanced error displaying. (later)
 -   [ ] Add better styles (later)
     -   [ ] How can you display the information in an engaging and accessible way?
     -   [ ] How will this view change with screens of different sizes?
+
+# Task 9 - CORE: Delete comments
+
+-   [!] Implement delete comment functionality.
+    -   [x] Add Delete button for current user's comments only.
+    -   [x] Implement delete request functionality.
+    -   [x] Delete only this comment from the DOM after timeout,
+            without comments refreshing.
+            for X (from config) seconds. (later)
+    -   [x] Display deleting... status loader.
+    -   [x] Display successful message with timeout.
+    -   [x] Display simple error message with timeout.
+-   [ ] Loading, deleting, error messages should not change comment box size. (later)
+-   [ ] Hide Delete button and add popover 3 dots menu it the top right corner. (later)
+-   [ ] Implement advanced error displaying. (later)
+-   [ ] Add better styles (later)
+    -   [ ] How can you display the information in an engaging and accessible way?
 
 # Bugs
 
