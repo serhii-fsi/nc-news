@@ -89,3 +89,17 @@ export function postComment(articleId, username, body) {
             return Promise.reject(error);
         });
 }
+
+export function deleteComment(commentId) {
+    if (failRequest("delete", `/comments/${commentId}`)) {
+        return getRejected(new Error());
+    }
+    return axios
+        .delete(`${appUrl}/comments/${commentId}`)
+        .then((response) => {
+            return response.data;
+        })
+        .catch((error) => {
+            return Promise.reject(error);
+        });
+}

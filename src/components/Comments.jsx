@@ -51,7 +51,7 @@ export default function Comments({ articleId }) {
                                 }
                                 key={comment.comment_id}
                             >
-                                <Comment comment={comment} />
+                                <Comment comment={comment} setComments={setComments} />
                             </li>
                         ))}
                     </ul>

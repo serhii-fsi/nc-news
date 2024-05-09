@@ -11,9 +11,9 @@
     },
     "unstableConnection": {
         "simulate": false,
-        "successChance": 0.1,
-        "method": "post",
-        "path": "comment"
+        "successChance": 0.5,
+        "method": "delete",
+        "path": "."
     },
     "VoteArticle": {
         "likeBlockingTimeout": 500,
@@ -23,5 +23,9 @@
         "successMsgTimeout": 5000,
         "errorMsgTimeout": 5000,
         "commentHighlightTimeout": 8000
+    },
+    "Comment": {
+        "successMsgTimeout": 5000,
+        "errorMsgTimeout": 5000
     }
 }

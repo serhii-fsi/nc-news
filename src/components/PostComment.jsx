@@ -1,4 +1,4 @@
-import { useEffect, useState, useContext } from "react";
+import { useState, useContext } from "react";
 import { postComment } from "../modules/api";
 import { UserContext } from "../providers/User";
 
