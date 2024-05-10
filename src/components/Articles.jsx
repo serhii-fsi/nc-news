@@ -47,7 +47,9 @@ export default function Articles() {
             <h4>
                 Articles loading failed
                 <br />
-                {errorMsg}
+                Topic: {topic}
+                <br />
+                Error message: {errorMsg}
             </h4>
             <div>
                 <button onClick={() => setRefresh((num) => num + 1)}>Try Again</button>

@@ -3,6 +3,7 @@ import "./App.css";
 import HomePage from "./components/HomePage";
 import SigninPage from "./components/SigninPage";
 import ArticlePage from "./components/ArticlePage";
+import Page404 from "./components/Page404";
 import { UserProvider } from "./providers/User";
 
 import config from "../config.json";
@@ -19,6 +20,7 @@ function App() {
                     <Route path={paths.signin.template} element={<SigninPage />} />
                     <Route path={paths.article.template} element={<ArticlePage />} />
                     <Route path={paths.topic.template} element={<HomePage />} />
+                    <Route path={"*"} element={<Page404 />} />
                 </Routes>
             </UserProvider>
         </>
