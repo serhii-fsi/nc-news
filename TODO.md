@@ -140,6 +140,10 @@
             all of the required information.
 -   [ ] Add better styles (MUI - later)
 
+# Task 13 - CORE: Deploy app
+
+-   [x] See it. Say it. ~~Sorted~~ Deployed :D
+
 # Bugs
 
 # Improvements
