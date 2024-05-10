@@ -4,6 +4,7 @@ import config from "../../config.json";
 const {
     appUrl: { apiV1: appUrl },
     unstableConnection,
+    queryParams: { topicParam, sortByParam, sortByOptions, orderParam, orderOptions },
 } = config;
 
 function failRequest(method, path) {
@@ -26,11 +27,24 @@ function getDataFromErr(err) {
         : { status: 500, msg: "Server Error" };
 }
 
-export function fetchArticles(topic, sort) {
+function createParamsQuery(paramNames, paramValues) {
+    if (paramValues.every((value) => value === undefined)) return "";
+    return (
+        "?" +
+        paramValues.reduce((result, value, index) => {
+            if (!value) return result;
+            else {
+                result += result ? "&" : "";
+                return result + `${paramNames[index]}=${encodeURI(value)}`;
+            }
+        }, "")
+    );
+}
+
+export function fetchArticles(topic, sort, order) {
     let path = `/articles`;
 
-    path += topic || sort ? "?" : "";
-    path += topic ? `topic=${encodeURI(topic)}` : "";
+    path += createParamsQuery([topicParam, sortByParam, orderParam], [topic, sort, order]);
 
     if (failRequest("get", path)) {
         return getRejected(getDataFromErr());
