@@ -132,7 +132,7 @@
 
 # Task 12 - CORE: Error handling
 
--   [ ] Users should be able to see an appropriate errors
+-   [x] Users should be able to see an appropriate errors
     -   [x] for a non-existent path.
     -   [x] for a non-existent article.
     -   [x] for a non-existent topic.
