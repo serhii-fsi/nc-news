@@ -89,7 +89,7 @@
 
 # Task 9 - CORE: Delete comments
 
--   [!] Implement delete comment functionality.
+-   [x] Implement delete comment functionality.
     -   [x] Add Delete button for current user's comments only.
     -   [x] Implement delete request functionality.
     -   [x] Delete only this comment from the DOM after timeout,
@@ -103,6 +103,18 @@
 -   [ ] Implement advanced error displaying. (later)
 -   [ ] Add better styles (later)
     -   [ ] How can you display the information in an engaging and accessible way?
+
+# Task 10 - CORE: View a separate page for each topic with a list of related articles
+
+-   [x] Implement Topics component.
+-   [x] Implement fetch topics function.
+-   [x] Implement filtering by topics functionality in Articles.
+-   [x] Implement loader.
+-   [x] Display error message in Topics.
+-   [x] Display error message on wrong topic in Articles.
+-   [ ] Add better styles (MUI - later)
+    -   [ ] How will this view change with screens of different sizes?
+    -   [ ] How can you display the information in Topics in an engaging and accessible way?
 
 # Bugs
 

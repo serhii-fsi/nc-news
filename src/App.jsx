@@ -18,6 +18,7 @@ function App() {
                     <Route path={paths.home.template} element={<HomePage />} />
                     <Route path={paths.signin.template} element={<SigninPage />} />
                     <Route path={paths.article.template} element={<ArticlePage />} />
+                    <Route path={paths.topic.template} element={<HomePage />} />
                 </Routes>
             </UserProvider>
         </>

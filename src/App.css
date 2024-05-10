@@ -32,11 +32,27 @@
 
 /* Articles */
 .articles {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     list-style: none;
     padding: 0;
 }
 .articles-li {
     padding: 0;
+}
+.articles-error {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.articles-error h4 {
+    text-align: center;
+}
+.articles-loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 /* ArticleTile */
@@ -199,4 +215,42 @@
 .post-comment-success {
 }
 .post-comment-error {
+}
+
+/* Topics */
+.topics {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.topics-ul {
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.topics-li {
+    padding: 5px;
+}
+.topics-link {
+    border-radius: 8px;
+    color: #000;
+    background-color: #dcdcdc;
+    padding: 6px 14px 6px 14px;
+    margin: 0px;
+    text-decoration: none;
+}
+.selected {
+    color: #fff;
+    background-color: #3b72ad;
+}
+.topics-error {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.topics-error h4 {
+    margin: 10px;
 }
