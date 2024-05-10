@@ -20,37 +20,64 @@ function getRejected(err) {
     });
 }
 
-export function fetchArticles() {
-    if (failRequest("get", `/articles`)) {
-        return getRejected(new Error());
+function getDataFromErr(err) {
+    return err?.response?.data?.error
+        ? err?.response?.data?.error
+        : { status: 500, msg: "Server Error" };
+}
+
+export function fetchArticles(topic, sort) {
+    let path = `/articles`;
+
+    path += topic || sort ? "?" : "";
+    path += topic ? `topic=${encodeURI(topic)}` : "";
+
+    if (failRequest("get", path)) {
+        return getRejected(getDataFromErr());
     }
     return axios
-        .get(`${appUrl}/articles`)
+        .get(`${appUrl}${path}`)
         .then((response) => {
             return response.data;
         })
         .catch((error) => {
-            return Promise.reject(error);
+            return Promise.reject(getDataFromErr(error));
+        });
+}
+
+export function fetchTopics() {
+    const path = `/topics`;
+    if (failRequest("get", path)) {
+        return getRejected(getDataFromErr());
+    }
+    return axios
+        .get(`${appUrl}${path}`)
+        .then((response) => {
+            return response.data;
+        })
+        .catch((error) => {
+            return Promise.reject(getDataFromErr(error));
         });
 }
 
 export function fetchArticle(articleId) {
-    if (failRequest("get", `${appUrl}/articles/${articleId}`)) {
-        return getRejected(new Error());
+    const path = `/articles/${articleId}`;
+    if (failRequest("get", path)) {
+        return getRejected(getDataFromErr());
     }
     return axios
-        .get(`${appUrl}/articles/${articleId}`)
+        .get(`${appUrl}${path}`)
         .then((response) => {
             return response.data;
         })
         .catch((error) => {
-            return Promise.reject(error);
+            return Promise.reject(getDataFromErr(error));
         });
 }
 
 export function sendArticleVote(articleId, voteNumber) {
     if (failRequest("patch", `/articles/${articleId}`)) {
-        return getRejected(new Error());
+        return getRejected(getDataFromErr());
     }
     return axios
         .patch(`${appUrl}/articles/${articleId}`, { inc_votes: voteNumber })
@@ -58,13 +85,13 @@ export function sendArticleVote(articleId, voteNumber) {
             return response.data;
         })
         .catch((error) => {
-            return Promise.reject(error);
+            return Promise.reject(getDataFromErr(error));
         });
 }
 
 export function fetchComments(articleId) {
     if (failRequest("get", `/articles/${articleId}/comments`)) {
-        return getRejected(new Error());
+        return getRejected(getDataFromErr());
     }
     return axios
         .get(`${appUrl}/articles/${articleId}/comments`)
@@ -72,13 +99,13 @@ export function fetchComments(articleId) {
             return response.data;
         })
         .catch((error) => {
-            return Promise.reject(error);
+            return Promise.reject(getDataFromErr(error));
         });
 }
 
 export function postComment(articleId, username, body) {
     if (failRequest("post", `/articles/${articleId}/comments`)) {
-        return getRejected(new Error());
+        return getRejected(getDataFromErr());
     }
     return axios
         .post(`${appUrl}/articles/${articleId}/comments`, { username, body })
@@ -86,13 +113,13 @@ export function postComment(articleId, username, body) {
             return response.data;
         })
         .catch((error) => {
-            return Promise.reject(error);
+            return Promise.reject(getDataFromErr(error));
         });
 }
 
 export function deleteComment(commentId) {
     if (failRequest("delete", `/comments/${commentId}`)) {
-        return getRejected(new Error());
+        return getRejected(getDataFromErr());
     }
     return axios
         .delete(`${appUrl}/comments/${commentId}`)
@@ -100,6 +127,6 @@ export function deleteComment(commentId) {
             return response.data;
         })
         .catch((error) => {
-            return Promise.reject(error);
+            return Promise.reject(getDataFromErr(error));
         });
 }

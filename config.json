@@ -5,6 +5,7 @@
     "router": {
         "paths": {
             "home": { "template": "/", "params": [] },
+            "topic": { "template": "/topics/:topic", "params": [":topic"] },
             "signin": { "template": "/signin", "params": [] },
             "article": { "template": "/articles/:article_id", "params": [":article_id"] }
         }
