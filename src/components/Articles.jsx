@@ -1,10 +1,18 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useSearchParams } from "react-router-dom";
 import { fetchArticles } from "../modules/api";
 import ArticleTile from "./ArticleTile";
 
+import config from "../../config.json";
+const {
+    queryParams: { sortByParam, sortByOptions, orderParam, orderOptions },
+} = config;
+
 export default function Articles() {
     const { topic } = useParams();
+    const [searchParams, setSearchParams] = useSearchParams();
+    const sortByQuery = searchParams.get(sortByParam);
+    const orderQuery = searchParams.get(orderParam);
     const [articles, setArticles] = useState([]);
     const [requestStatus, setRequestStatus] = useState("loading");
     const [errorMsg, setErrorMsg] = useState("");
@@ -12,7 +20,11 @@ export default function Articles() {
 
     useEffect(() => {
         setRequestStatus("loading");
-        fetchArticles(topic)
+        fetchArticles(
+            topic,
+            sortByOptions[sortByQuery] ? sortByQuery : undefined,
+            orderOptions[orderQuery] ? orderQuery : undefined
+        )
             .then((data) => {
                 const { articles } = data;
                 setArticles(articles);
@@ -22,7 +34,7 @@ export default function Articles() {
                 setRequestStatus("error");
                 setErrorMsg(err.msg);
             });
-    }, [topic, refresh]);
+    }, [topic, refresh, sortByQuery, orderQuery]);
 
     const loading = (
         <div className="articles-loading">

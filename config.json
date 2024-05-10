@@ -28,5 +28,16 @@
     "Comment": {
         "successMsgTimeout": 5000,
         "errorMsgTimeout": 5000
+    },
+    "queryParams": {
+        "topicParam": "topic",
+        "sortByParam": "sort_by",
+        "sortByOptions": {
+            "created_at": "Date",
+            "comment_count": "Comments count",
+            "votes": "Votes"
+        },
+        "orderParam": "order",
+        "orderOptions": { "asc": "Ascending", "desc": "Descending" }
     }
 }
