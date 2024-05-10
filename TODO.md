@@ -124,11 +124,21 @@
 -   [x] Implement sorting functionality in fetchArticles().
 -   [x] Implement sorting functionality in Articles component.
 -   [-] Display error message on wrong query params in Articles.
-        Decided just to skip wrong params, because app should always 
-        give a correct path. 
+    Decided just to skip wrong params, because app should always
+    give a correct path.
 -   [ ] Add better styles (MUI - later)
     -   [ ] How will this view change with screens of different sizes?
     -   [ ] How can you display the information in an engaging and accessible way?
+
+# Task 12 - CORE: Error handling
+
+-   [x] Users should be able to see an appropriate errors
+    -   [x] for a non-existent path.
+    -   [x] for a non-existent article.
+    -   [x] for a non-existent topic.
+    -   [x] when posting a new comment if they have not provided
+            all of the required information.
+-   [ ] Add better styles (MUI - later)
 
 # Bugs
 
